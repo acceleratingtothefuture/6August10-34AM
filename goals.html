@@ -30,7 +30,7 @@
   <section id="panelMain">
     <div class="dashboard-header">
       <h2>Goals</h2>
-      <p>X cases processed by Y year.</p>
+      <p>Reach target processing volume by 2024.</p>
     </div>
 
     <div class="chart-section">
@@ -39,7 +39,9 @@
       <div class="goalChart">
         <canvas id="casesFiledChart"></canvas>
         <div class="hoverDisplay">
-          <strong id="casesFiledVal">—</strong> <span id="casesFiledMonth">Month</span>
+          <div><span class="label2023">2023:</span> <strong id="val2023">—</strong></div>
+          <div><span class="label2024">2024:</span> <strong id="val2024">—</strong></div>
+          <div><span class="labelDiff">Δ:</span> <strong id="valDiff">—</strong></div>
         </div>
       </div>
 
@@ -48,7 +50,9 @@
       <div class="goalChart">
         <canvas id="outerRegionChart"></canvas>
         <div class="hoverDisplay">
-          <strong id="outerVal">—</strong> <span id="outerMonth">Month</span>
+          <div><span class="label2023">2023:</span> <strong id="val2023Outer">—</strong></div>
+          <div><span class="label2024">2024:</span> <strong id="val2024Outer">—</strong></div>
+          <div><span class="labelDiff">Δ:</span> <strong id="valDiffOuter">—</strong></div>
         </div>
       </div>
     </div>
