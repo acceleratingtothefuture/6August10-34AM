@@ -97,14 +97,17 @@ body {
 }
 
 .da-logo {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  height: 48px;
+  height: 80px;
   width: auto;
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
 }
+
 .site-header .container {
   position: relative;
   padding-left: 80px;
 }
+
 
