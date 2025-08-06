@@ -99,11 +99,13 @@ body {
 .da-logo {
   height: 120px;
   width: auto;
-  position: absolute;
-  top: 50%;
-  right: 24px;
-  transform: translateY(-50%);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  transform: none;
+  z-index: 10;
 }
+
 
 .site-header .container {
   display: flex;
@@ -115,4 +117,5 @@ body {
   margin: 0 auto;
   text-align: center;
 }
+
 
