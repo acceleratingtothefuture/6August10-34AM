@@ -1,42 +1,42 @@
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-// fake yearly values
 const caseData = {
   labels: MONTH_NAMES,
-  data2022: [200, 210, 250, 230, 270, 290, 310, 280, 260, 240, 230, 250],
-  data2023: [220, 225, 260, 245, 275, 300, 320, 290, 270, 260, 250, 270]
+  data2023: [200, 210, 250, 230, 270, 290, 310, 280, 260, 240, 230, 250],
+  data2024: [220, 225, 260, 245, 275, 300, 320, 290, 270, 260, 250, 270]
 };
 
 const outerRegionData = {
   labels: MONTH_NAMES,
-  data2022: [12, 14, 11, 10, 15, 17, 18, 16, 13, 11, 10, 12],
-  data2023: [14, 15, 13, 12, 16, 20, 21, 19, 17, 14, 13, 15]
+  data2023: [12, 14, 11, 10, 15, 17, 18, 16, 13, 11, 10, 12],
+  data2024: [14, 15, 13, 12, 16, 20, 21, 19, 17, 14, 13, 15]
 };
 
-function makeBigLine(idCanvas, idVal, idMonth, dataset1, dataset2, label1, label2, color1, color2) {
-  const ctx = document.getElementById(idCanvas).getContext('2d');
-  const elVal = document.getElementById(idVal);
-  const elMonth = document.getElementById(idMonth);
+function makeBigLine(canvasId, val2023Id, val2024Id, diffId, data2023, data2024, label2023, label2024, color2023, color2024) {
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  const el2023 = document.getElementById(val2023Id);
+  const el2024 = document.getElementById(val2024Id);
+  const elDiff  = document.getElementById(diffId);
 
-  const chart = new Chart(ctx, {
+  new Chart(ctx, {
     type: 'line',
     data: {
       labels: MONTH_NAMES,
       datasets: [
         {
-          label: label1,
-          data: dataset1,
-          borderColor: color1,
-          backgroundColor: color1 + '33',
+          label: label2023,
+          data: data2023,
+          borderColor: color2023,
+          backgroundColor: color2023 + '33',
           tension: 0.4,
           fill: false,
           pointRadius: 5
         },
         {
-          label: label2,
-          data: dataset2,
-          borderColor: color2,
-          backgroundColor: color2 + '33',
+          label: label2024,
+          data: data2024,
+          borderColor: color2024,
+          backgroundColor: color2024 + '33',
           tension: 0.4,
           fill: false,
           pointRadius: 5
@@ -62,10 +62,21 @@ function makeBigLine(idCanvas, idVal, idMonth, dataset1, dataset2, label1, label
       onHover: (event, chartEls) => {
         const points = chartEls;
         if (points.length > 0) {
-          const index = points[0].index;
-          const value = dataset2[index];
-          elVal.textContent = value != null ? value.toFixed(1) : '—';
-          elMonth.textContent = MONTH_NAMES[index];
+          const i = points[0].index;
+          const v23 = data2023[i];
+          const v24 = data2024[i];
+          const delta = v24 - v23;
+
+          el2023.textContent = isFinite(v23) ? Math.round(v23) : '—';
+          el2024.textContent = isFinite(v24) ? Math.round(v24) : '—';
+
+          if (isFinite(delta)) {
+            elDiff.textContent = (delta >= 0 ? '+' : '') + Math.round(delta);
+            elDiff.className = delta >= 0 ? 'diff-up' : 'diff-down';
+          } else {
+            elDiff.textContent = '—';
+            elDiff.className = '';
+          }
         }
       },
       scales: {
@@ -77,26 +88,29 @@ function makeBigLine(idCanvas, idVal, idMonth, dataset1, dataset2, label1, label
   });
 }
 
+// build both charts
 makeBigLine(
   'casesFiledChart',
-  'casesFiledVal',
-  'casesFiledMonth',
-  caseData.data2022,
+  'val2023',
+  'val2024',
+  'valDiff',
   caseData.data2023,
-  '2022',
+  caseData.data2024,
   '2023',
+  '2024',
   '#007acc',
   '#ff6600'
 );
 
 makeBigLine(
   'outerRegionChart',
-  'outerVal',
-  'outerMonth',
-  outerRegionData.data2022,
+  'val2023Outer',
+  'val2024Outer',
+  'valDiffOuter',
   outerRegionData.data2023,
-  '2022',
+  outerRegionData.data2024,
   '2023',
+  '2024',
   '#2c974b',
   '#c0392b'
 );
