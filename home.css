@@ -11,12 +11,12 @@ body {
 
 /* NAVBAR */
 .nav {
-  background: linear-gradient(90deg, #2c3e50, #34495e);
+  background: linear-gradient(90deg, #1e2b47, #10172d);
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
+  padding: 12px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -28,16 +28,16 @@ body {
   line-height: 1.1;
 }
 .brand-main {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 .brand-sub {
-  font-size: 1.3rem;
-  color: #d0d6e3;
+  font-size: 1.1rem;
+  color: #c3cbe3;
   font-weight: 400;
 }
 .logo {
-  height: 130px;
+  height: 90px;
   width: auto;
   flex-shrink: 0;
 }
@@ -46,92 +46,21 @@ body {
 .hero {
   background: linear-gradient(275deg, #242673 30%, #15163d 100%);
   text-align: center;
-  padding: 3rem 1rem 2.4rem;
+  padding: 1.8rem 1rem 1.4rem;
   color: #fff;
 }
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   font-weight: 800;
   margin: 0;
 }
 .hero p {
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: #b0b8d1;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
-/* NAVIGATION */
-.main-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background: #ffffff;
-  border-bottom: 1px solid #ddd;
-  padding: 12px 0;
-  gap: 30px;
-  font-weight: 600;
-  font-size: 1rem;
-}
-.main-nav a {
-  text-decoration: none;
-  color: #333;
-  padding: 6px 10px;
-  border-radius: 4px;
-  transition: background 0.2s, color 0.2s;
-}
-.main-nav a:hover {
-  background: #e0e0e0;
-  color: #000;
-}
-.main-nav a.active {
-  color: #007acc;
-  border-bottom: 2px solid #007acc;
-  cursor: default;
-}
-
-/* MAIN SECTION */
-#panelMain {
-  width: 100%;
-  min-width: 600px;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.dashboard-header {
-  text-align: center;
-  margin: 40px 0;
-}
-.dashboard-header h2 {
-  font-size: 2.4rem;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-.dashboard-header p {
-  font-size: 1.3rem;
-  color: #444;
-  font-weight: 500;
-}
-
-/* HOME CONTENT */
-.home-content {
-  max-width: 900px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.home-content h3 {
-  margin-top: 40px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #222;
-}
-.home-content p {
-  margin-top: 12px;
-  color: #444;
-}
-
-/* MEDIA QUERIES */
+/* MEDIA */
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
@@ -142,12 +71,18 @@ body {
     align-items: center;
   }
   .logo {
-    height: 100px;
+    height: 70px;
   }
   .brand-main {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
   .brand-sub {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+  }
+  .hero {
+    padding: 1.6rem 1rem 1.2rem;
+  }
+  .hero h1 {
+    font-size: 1.9rem;
   }
 }
