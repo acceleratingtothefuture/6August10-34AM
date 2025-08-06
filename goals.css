@@ -95,8 +95,8 @@ body {
   margin-bottom: 20px;
 }
 
+/* CHART BOX */
 .goalChart {
-  position: relative;
   background: #fff;
   padding: 20px;
   border-radius: 12px;
@@ -109,14 +109,17 @@ body {
   height: 400px;
 }
 
-/* HOVER DISPLAY */
+/* HOVER DISPLAY (now outside the chart box) */
 .hoverDisplay {
-  position: absolute;
-  top: 16px;
-  right: 24px;
-  font-size: 1rem;
   text-align: right;
-  line-height: 1.4;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  line-height: 1.5;
+}
+
+.hoverDisplay strong {
+  font-weight: 600;
 }
 
 .label2023 {
