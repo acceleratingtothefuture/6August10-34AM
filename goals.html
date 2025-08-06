@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Imperial County DA • Case Dashboard</title>
- <!-- fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="goals.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="goals.js" defer></script>
 </head>
 <body>
 
@@ -30,6 +31,26 @@
     <div class="dashboard-header">
       <h2>Goals</h2>
       <p>X cases processed by Y year.</p>
+    </div>
+
+    <div class="chart-section">
+      <h3>Goal 1: Total Cases Filed Per Year</h3>
+      <p class="chart-desc">We're aiming to steadily increase case filing efficiency across the county.</p>
+      <div class="goalChart">
+        <canvas id="casesFiledChart"></canvas>
+        <div class="hoverDisplay">
+          <strong id="casesFiledVal">—</strong> <span id="casesFiledMonth">Month</span>
+        </div>
+      </div>
+
+      <h3>Goal 2: Outer County Prosecution Activity</h3>
+      <p class="chart-desc">Tracking case filings from regions outside core cities like El Centro and Brawley.</p>
+      <div class="goalChart">
+        <canvas id="outerRegionChart"></canvas>
+        <div class="hoverDisplay">
+          <strong id="outerVal">—</strong> <span id="outerMonth">Month</span>
+        </div>
+      </div>
     </div>
   </section>
 
