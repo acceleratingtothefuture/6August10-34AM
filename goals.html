@@ -36,24 +36,26 @@
     <div class="chart-section">
       <h3>Goal 1: Total Cases Filed Per Year</h3>
       <p class="chart-desc">We're aiming to steadily increase case filing efficiency across the county.</p>
+      <div class="hoverDisplay">
+        <div><strong id="monthLabel1">Month</strong></div>
+        <div><span class="label2023">2023:</span> <strong id="val2023">—</strong></div>
+        <div><span class="label2024">2024:</span> <strong id="val2024">—</strong></div>
+        <div><span class="labelDiff">Δ:</span> <strong id="valDiff">—</strong></div>
+      </div>
       <div class="goalChart">
         <canvas id="casesFiledChart"></canvas>
-        <div class="hoverDisplay">
-          <div><span class="label2023">2023:</span> <strong id="val2023">—</strong></div>
-          <div><span class="label2024">2024:</span> <strong id="val2024">—</strong></div>
-          <div><span class="labelDiff">Δ:</span> <strong id="valDiff">—</strong></div>
-        </div>
       </div>
 
       <h3>Goal 2: Outer County Prosecution Activity</h3>
       <p class="chart-desc">Tracking case filings from regions outside core cities like El Centro and Brawley.</p>
+      <div class="hoverDisplay">
+        <div><strong id="monthLabel2">Month</strong></div>
+        <div><span class="label2023">2023:</span> <strong id="val2023Outer">—</strong></div>
+        <div><span class="label2024">2024:</span> <strong id="val2024Outer">—</strong></div>
+        <div><span class="labelDiff">Δ:</span> <strong id="valDiffOuter">—</strong></div>
+      </div>
       <div class="goalChart">
         <canvas id="outerRegionChart"></canvas>
-        <div class="hoverDisplay">
-          <div><span class="label2023">2023:</span> <strong id="val2023Outer">—</strong></div>
-          <div><span class="label2024">2024:</span> <strong id="val2024Outer">—</strong></div>
-          <div><span class="labelDiff">Δ:</span> <strong id="valDiffOuter">—</strong></div>
-        </div>
       </div>
     </div>
   </section>
