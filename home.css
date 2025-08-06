@@ -100,10 +100,8 @@ body {
   height: 120px;
   width: auto;
   position: fixed;
-  top: 20px;
   right: 20px;
   transform: none;
-  z-index: 10;
 }
 
 
@@ -117,5 +115,4 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-
 
