@@ -12,10 +12,11 @@ const outerRegionData = {
   data2024: [14, 15, 13, 12, 16, 20, 21, 19, 17, 14, 13, 15]
 };
 
-function makeBigLine(canvasId, val2023Id, val2024Id, diffId, data2023, data2024, label2023, label2024, color2023, color2024) {
+function makeBigLine(canvasId, labelId, val23Id, val24Id, diffId, data2023, data2024, label2023, label2024, color2023, color2024) {
   const ctx = document.getElementById(canvasId).getContext('2d');
-  const el2023 = document.getElementById(val2023Id);
-  const el2024 = document.getElementById(val2024Id);
+  const elLabel = document.getElementById(labelId);
+  const el2023 = document.getElementById(val23Id);
+  const el2024 = document.getElementById(val24Id);
   const elDiff  = document.getElementById(diffId);
 
   new Chart(ctx, {
@@ -63,10 +64,12 @@ function makeBigLine(canvasId, val2023Id, val2024Id, diffId, data2023, data2024,
         const points = chartEls;
         if (points.length > 0) {
           const i = points[0].index;
+          const month = MONTH_NAMES[i];
           const v23 = data2023[i];
           const v24 = data2024[i];
           const delta = v24 - v23;
 
+          elLabel.textContent = month;
           el2023.textContent = isFinite(v23) ? Math.round(v23) : '—';
           el2024.textContent = isFinite(v24) ? Math.round(v24) : '—';
 
@@ -88,9 +91,10 @@ function makeBigLine(canvasId, val2023Id, val2024Id, diffId, data2023, data2024,
   });
 }
 
-// build both charts
+// Build both charts
 makeBigLine(
   'casesFiledChart',
+  'monthLabel1',
   'val2023',
   'val2024',
   'valDiff',
@@ -104,6 +108,7 @@ makeBigLine(
 
 makeBigLine(
   'outerRegionChart',
+  'monthLabel2',
   'val2023Outer',
   'val2024Outer',
   'valDiffOuter',
