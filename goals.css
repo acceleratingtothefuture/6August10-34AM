@@ -73,9 +73,9 @@ body {
   font-size: 1.3rem;
   color: #444;
   font-weight: 500;
-
 }
 
+/* CHART SECTION */
 .chart-section {
   max-width: 1000px;
   margin: 0 auto;
@@ -109,10 +109,35 @@ body {
   height: 400px;
 }
 
+/* HOVER DISPLAY */
 .hoverDisplay {
   position: absolute;
   top: 16px;
   right: 24px;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  text-align: right;
+  line-height: 1.4;
+}
+
+.label2023 {
   color: #007acc;
+  font-weight: 600;
+}
+
+.label2024 {
+  color: #ff6600;
+  font-weight: 600;
+}
+
+.labelDiff {
+  color: #888;
+  font-weight: 600;
+}
+
+.diff-up {
+  color: #2c974b;
+}
+
+.diff-down {
+  color: #c0392b;
 }
