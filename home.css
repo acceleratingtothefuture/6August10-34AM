@@ -96,3 +96,15 @@ body {
   color: #444;
 }
 
+.da-logo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  height: 48px;
+  width: auto;
+}
+.site-header .container {
+  position: relative;
+  padding-left: 80px;
+}
+
