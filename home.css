@@ -12,7 +12,7 @@ body {
   background: linear-gradient(90deg, #2c3e50, #34495e);
   color: #fff;
   padding: 20px;
-  text-align: center;
+  position: relative;
 }
 .site-header h1 {
   margin: 0;
@@ -101,16 +101,19 @@ body {
   width: auto;
   position: absolute;
   top: 50%;
-  right: 24px;
+  right: 0;
   transform: translateY(-50%);
-  max-width: 25%;
   object-fit: contain;
 }
 
+
 .site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  padding-right: 200px; /* give room for the big logo on the right */
 }
+
 
 
 
